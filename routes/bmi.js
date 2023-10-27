@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/bmiCal/:weight/:height', function(req, res) {
-   let height = Number(req.params.height);
-   let weight = Number(req.params.weight)/100;
+   let weight = Number(req.params.weight);
+   let height = Number(req.params.height)/100;
    var bmi = weight / Math.pow(height,2);
    let desc = "";
    if(bmi < 18.5){
