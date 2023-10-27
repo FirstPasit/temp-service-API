@@ -28,5 +28,16 @@
 		</form>
 	</div>
 	<div id="result" style="margin:10px; color:red;"></div>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				let tem = $("#tem").val(); //#tem อ้างอิงID
+				let unit = $("#unit").val(); // เหมือนtem
+				$.get("/conv/"+tem+"/"+unit,function(data,status){ //call service in url pattern ,status : status code
+					alert("data -> "+JSON.stringify(data)); //convert JSON to String
+				});
+			});
+		})
+	</script>
   </body>
 </html>
