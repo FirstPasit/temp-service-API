@@ -34,7 +34,9 @@
 				let tem = $("#tem").val(); //#tem อ้างอิงID
 				let unit = $("#unit").val(); // เหมือนtem
 				$.get("/conv/"+tem+"/"+unit,function(data,status){ //call service in url pattern ,status : status code
-					alert("data -> "+JSON.stringify(data)); //convert JSON to String
+					//alert("data -> "+JSON.stringify(data)); //convert JSON to String
+					$("#result").html("<br> tem -> "+data.temp_conv
+						+", unit -> " + data.unit_conv);
 				});
 			});
 		})
